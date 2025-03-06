@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.3.7"
+# ruby "3.2.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
@@ -64,3 +64,5 @@ group :test do
 end
 gem 'omniauth-twitter'
 gem 'rake'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'sidekiq'

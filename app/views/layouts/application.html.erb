@@ -23,13 +23,15 @@
   </head>
 
   <body>
-    <% if current_user %>
-  Signed in as <%= current_user.name %>!
-  <%= link_to "Sign out", signout_path %>
-<% else %>
-  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-<% end %>
+  <% if current_user %>
+    <p>Welcome, <%= current_user.name %>!</p>
+    <%= link_to "Create Post", new_tweet_path, class: "btn btn-primary" %>
+    <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+  <% else %>
+    <%= link_to "Sign in with Twitter", "/auth/twitter", class: "btn btn-info" %>
+  <% end %>
 
-    <%= yield %>
-  </body>
+  <%= yield %>
+</body>
+
 </html>
