@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-# social_media
-=======
-<<<<<<< HEAD
-# social_media_post_scheduler
-=======
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -28,5 +23,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
->>>>>>> 6bcb9cd (initial commit)
->>>>>>> 8e2acb3 (Initial commit)
+
