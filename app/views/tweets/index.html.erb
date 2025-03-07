@@ -1,0 +1,30 @@
+<h2>Your Tweets</h2>
+
+<%= link_to "New Tweet", new_tweet_path, class: "btn btn-primary" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Scheduled At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        <td><%= tweet.content %></td>
+        <td><%= tweet.scheduled_at&.strftime("%Y-%m-%d %H:%M") || "Not Scheduled" %></td>
+        <td>
+          <% unless tweet.published %>
+            <%= button_to "Post Now", publish_now_tweet_path(tweet), method: :post, class: "btn btn-success btn-sm" %>
+          <% end %>
+
+          <%= link_to "Edit", edit_tweet_path(tweet), class: "btn btn-warning btn-sm" %>
+
+          <%= button_to "Delete", tweet_path(tweet), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

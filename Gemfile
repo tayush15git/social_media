@@ -66,3 +66,4 @@ gem 'omniauth-twitter'
 gem 'rake'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'sidekiq'
+gem 'twitter', '~> 7.0'

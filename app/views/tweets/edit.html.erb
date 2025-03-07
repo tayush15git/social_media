@@ -1,0 +1,15 @@
+<h2>Edit Tweet</h2>
+
+<%= form_with model: @tweet, url: tweet_path(@tweet), local: true do |form| %>
+  <div>
+    <%= form.label :content, "Tweet Content" %>
+    <%= form.text_area :content, rows: 3, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :scheduled_at, "Schedule for later (optional)" %>
+    <%= form.datetime_local_field :scheduled_at %>
+  </div>
+
+  <%= form.submit "Update Tweet", class: "btn btn-primary" %>
+<% end %>

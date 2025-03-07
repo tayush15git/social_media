@@ -3,7 +3,12 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # resources :sessions
-  resources :tweets, only:  [:new, :index, :create]
+  resources :tweets do
+    member do
+      post :publish_now
+    end
+  end
+
   root "sessions#index"
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
