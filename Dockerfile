@@ -33,6 +33,9 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
+# Add this line before the bundle install command
+RUN apt-get update && apt-get install -y libyaml-dev
+
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
