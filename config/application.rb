@@ -25,9 +25,5 @@ module TwitterAuth
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.active_job.queue_adapter = :sidekiq
-    Rails.application.config.to_prepare do
-      SolidCable::Record.connects_to database: { writing: :production, reading: :production }
-      SolidQueue::Record.connects_to database: { writing: :production, reading: :production }
-    end
   end
 end
