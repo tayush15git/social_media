@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for(:title) || "SCHEDULINK" %></title>
+  <title><%= content_for(:title) || "SCHEDULE_X" %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -12,9 +12,8 @@
 
 <body>
   <nav class="navbar">
-    <!-- Left side: App name + Navigation Links -->
     <div class="nav-left">
-      <%= link_to "SCHEDULINK", root_path, class: "nav-logo" %>
+      <%= link_to "SCHEDULE_X", root_path, class: "nav-logo" %>
       
       <% if current_user %>
         <%= link_to "Tweets", tweets_path, class: "nav-link" %>
@@ -22,8 +21,6 @@
         <%= link_to "Edit a Tweet", "#", class: "nav-link" %>
       <% end %>
     </div>
-
-    <!-- Right side: Login/Logout -->
     <div class="nav-right">
       <% if current_user %>
         <%= link_to "Logout", logout_path, method: :delete, class: "nav-button logout" %>

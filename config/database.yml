@@ -96,9 +96,9 @@ production:
     pool: 5
 
 cable:
-  <<: *default  # This inherits from your default configuration
+  <<: *default
   database: postgres
 
 queue:
-  <<: *default  # This inherits from your default configuration
+  <<: *default
   database: postgres
