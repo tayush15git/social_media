@@ -20,7 +20,9 @@
             <%= button_to "Post Now", publish_now_tweet_path(tweet), method: :post, class: "btn btn-success btn-sm" %>
           <% end %>
 
-          <%= button_to "Edit", edit_tweet_path(tweet), class: "btn btn-warning btn-sm" %>
+          <%#= button_to "Edit", edit_tweet_path(tweet), class: "btn btn-warning btn-sm" %>
+
+          <%= button_to "Edit", edit_tweet_path(tweet), method: :get, class: "btn btn-warning btn-sm" %>
 
           <%= button_to "Delete", tweet_path(tweet), method: :delete, data: { turbo: false, confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
         </td>
